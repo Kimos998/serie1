@@ -64,5 +64,33 @@
     
 </div>
 
+
+ <script>
+        async function fetchSeriesData() {
+            const response = await fetch('https://sheets.googleapis.com/v4/spreadsheets/15zoCNcy-A5TYZWFSaXn129JWUm9HzjMWr70Pda3GaTI/values/Sheet1!A1:I100?key=AIzaSyB5WTjIR5OZt108xl9uQApzeoNRWuMyYRE');
+            const data = await response.json();
+            return data.values.slice(1); // تجاوز السطر الأول الذي يحتوي على عناوين الأعمدة
+        }
+
+        async function displaySeriesList() {
+            const seriesData = await fetchSeriesData();
+            const seriesList = document.getElementById('seriesList');
+
+            const seriesNames = [...new Set(seriesData.map(row => row[1]))];
+
+            seriesNames.forEach(seriesName => {
+                const listItem = document.createElement('li');
+                listItem.innerText = seriesName;
+                listItem.onclick = function() {
+                    window.location.href = `view.html?series=${encodeURIComponent(seriesName)}`;
+                };
+                seriesList.appendChild(listItem);
+            });
+        }
+
+        displaySeriesList();
+    </script>
+    
+
 </body>
 </html>
