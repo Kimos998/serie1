@@ -31,20 +31,37 @@
         clear: both;
         display: table;
     }
+      /* Agregar estilos CSS para mejorar el diseño */
+     #seriesList li:hover {
+        color: darkgray; /* Cambiar color del texto al pasar el mouse */
+        cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+        }
 </style>
 </head>
 <body>
 
 <div class="container">
     <div class="column" style="background-color: #f0f0f0;">
-        <h2>Column 1</h2>
-        <p>This is column 1 content.</p>
+
+ <ul id="seriesList"></ul>
+        
     </div>
+
+    
     <div class="column" style="background-color: #ddd;">
-        <h2>Column 2</h2>
-        <p>This is column 2 content.</p>
+       
+         <ul id="seriesList"></ul>    
     </div>
-    <div class="clearfix"></div>
+
+    
+    <div class="clearfix">
+
+<div style="background-color: #ddd;text-align: center;">
+       serie merry   
+    </div>  
+        
+    </div>
+    
 </div>
 
 </body>
