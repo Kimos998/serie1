@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Columns</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .column {
+        float: left;
+        width: 50%; /* عرض العمودين في الشاشات العريضة */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 767px) { /* تقليص العمودين لعرض عمود واحد في الشاشات الصغيرة */
+        .column {
+            width: 100%;
+        }
+    }
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="column" style="background-color: #f0f0f0;">
+        <h2>Column 1</h2>
+        <p>This is column 1 content.</p>
+    </div>
+    <div class="column" style="background-color: #ddd;">
+        <h2>Column 2</h2>
+        <p>This is column 2 content.</p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+</body>
+</html>
